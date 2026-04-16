@@ -4887,10 +4887,6 @@ span.fill {
     transition: .9s;
 }
 
-.pricing-area .single-pricing-box.style_two{
-
-}
-
 .pricing-area .single-pricing-box.style_two::before{
     background: #101010;
 }
@@ -13449,11 +13445,19 @@ button.btns:hover::before{
 
 .homefix-ac-page .homefix-ac-benefits .benefit-block {
     margin-bottom: 28px;
+    padding: 22px 24px;
+    border-radius: 14px;
 }
 
 .homefix-ac-page .homefix-ac-benefits .benefit-block h4 {
     color: #d8ab7a;
     margin-bottom: 12px;
+}
+
+@media (max-width: 575px) {
+    .homefix-ac-page .homefix-ac-benefits .benefit-block {
+        padding: 18px 16px;
+    }
 }
 
 .homefix-ac-page .homefix-ac-tags a {
@@ -13916,4 +13920,779 @@ button.btns:hover::before{
 
 .homefix-amc-plan .plan-extra-list li::marker {
     color: #f5cba0;
+}
+
+/* ==================================================
+   HomeFix light theme overrides (client request)
+   White base + soft complementary accents
+   ================================================== */
+
+:root {
+    --homefix-bg: #ffffff;
+    --homefix-surface: #f7f8fa;
+    --homefix-text: #1a1a1a;
+    --homefix-muted: #5b6472;
+    --homefix-border: rgba(16, 16, 16, 0.12);
+    --homefix-accent: #d8ab7a;
+    --homefix-accent-2: #2f7fa8; /* complementary cool accent */
+    --homefix-shadow: 0 10px 30px rgba(16, 16, 16, 0.08);
+}
+
+body {
+    background: var(--homefix-bg);
+    color: var(--homefix-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--homefix-text);
+}
+
+/* Many template blocks use `.white` to force white-on-dark.
+   In light mode, keep them readable. */
+.white h1,
+.white h2,
+.white h3,
+.white h4,
+.white h5,
+.white h6,
+.white p,
+.white i,
+.white span,
+.white a {
+    color: var(--homefix-text) !important;
+}
+
+p, span, li {
+    color: inherit;
+}
+
+a {
+    color: var(--homefix-accent-2);
+}
+
+a:hover {
+    color: var(--homefix-accent);
+}
+
+/* Main navigation: switch from dark to light */
+.hendre_nav_manu,
+.sticky.hendre_nav_manu {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 var(--homefix-border), var(--homefix-shadow);
+}
+
+.hendre_menu > ul > li > a,
+.header-button a,
+.nav-btn.navSidebar-button i,
+.sticky .hendre_menu > ul > li > a,
+.sticky .header-button a,
+.sticky .nav-btn.navSidebar-button i {
+    color: var(--homefix-text) !important;
+}
+
+/* Light surfaces for key sections */
+.feature-area.one,
+.about-area.one,
+.counter-area.one,
+.project-area.one,
+.team-area.one,
+.testimonial-area.one,
+.blog-area.one,
+.tag-area.one,
+.brand-area.one,
+.service-details-area,
+.pricing-area,
+.footer-section {
+    background: var(--homefix-bg) !important;
+}
+
+/* Hero/slider area still forces dark colors in template */
+.slider-area.one {
+    background: var(--homefix-bg) !important;
+}
+
+.slider-area.one .row.bor-der {
+    border-color: rgba(16, 16, 16, 0.08) !important;
+}
+
+.slider-area.one .single-slider {
+    background: var(--homefix-surface) !important;
+}
+
+.slider-area.one .slider-title h1,
+.slider-area.one .slider-number h1,
+.slider-area.one .slider-button a,
+.slider-area.one .slider-icon-list ul li a,
+.slider-area.one .slider-icon-list h5 {
+    color: var(--homefix-text) !important;
+    -webkit-text-stroke-color: rgba(16, 16, 16, 0.35) !important;
+}
+
+.slider-area.one .slider-button::before {
+    border-color: rgba(16, 16, 16, 0.45) !important;
+}
+
+.slider-area.one .slider-button a::before,
+.slider-area.one .slider-button a::after,
+.slider-area.one .slider-icon-list h5::before,
+.slider-area.one .slider-title h1::before,
+.slider-area.one .single-slider::before,
+.slider-area.one .single-slider::after,
+.slider-area.one .single-slider-left::before,
+.slider-area.one .single-slider-left::after,
+.slider-area.one .row.bor-der::before {
+    background: rgba(16, 16, 16, 0.18) !important;
+}
+
+/* Footer had white text rules; keep it readable on white */
+.footer-section,
+.footer-section p,
+.footer-section h3,
+.footer-section h4,
+.footer-section li,
+.footer-section a,
+.copyright-area,
+.copyright-area p {
+    color: var(--homefix-text) !important;
+}
+
+/* Section titles sometimes set white explicitly */
+.section-title .main-title h1,
+.section-title .sub-title h2,
+.section-title .sub-title h2 span {
+    color: var(--homefix-text) !important;
+}
+
+/* Remove background "watermark" titles entirely (client request) */
+.section-title .main-title {
+    display: none !important;
+}
+
+/* When watermark is removed, restore normal heading layout */
+.section-title .sub-title h2 {
+    top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.section-title .sub-title h2::after {
+    top: auto !important;
+}
+
+/* Service detail pages hero band (was dark) */
+body.homefix-ac-page .homefix-ac-hero--bg,
+body.homefix-office-page .homefix-ac-hero--bg,
+body.homefix-cleaning-page .homefix-ac-hero--bg,
+body.homefix-renovation-page .homefix-ac-hero--bg,
+body.homefix-landscaping-page .homefix-ac-hero--bg,
+body.homefix-water-tank-page .homefix-ac-hero--bg,
+body.homefix-pool-page .homefix-ac-hero--bg {
+    background: var(--homefix-bg) !important;
+}
+
+body.homefix-ac-page .homefix-ac-hero-panel,
+body.homefix-ac-page .homefix-ac-services-aside {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border) !important;
+    color: var(--homefix-text) !important;
+    backdrop-filter: none !important;
+}
+
+body.homefix-ac-page .homefix-ac-hero .trust-line,
+body.homefix-ac-page .homefix-ac-hero .lead-text,
+body.homefix-ac-page .homefix-ac-services-lead,
+body.homefix-ac-page .homefix-ac-services-note,
+body.homefix-ac-page .homefix-ac-services-list li,
+body.homefix-ac-page .homefix-ac-hero .hero-bullets li,
+body.homefix-ac-page .homefix-ac-hero .muted-note {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-ac-page .homefix-ac-hero .section-title .sub-title h2 {
+    color: var(--homefix-text) !important;
+}
+
+/* AMC block after Core Benefits (was dark background image) */
+body.homefix-ac-page .feature-area.one.homefix-ac-amc-section {
+    background: var(--homefix-bg) !important;
+}
+
+body.homefix-ac-page .homefix-ac-amc-section::before {
+    display: none !important;
+}
+
+body.homefix-ac-page .homefix-ac-amc-section .section-title.upper .sub-title h2,
+body.homefix-ac-page .homefix-ac-amc-section .section-title.upper .sub-title h2 span,
+body.homefix-ac-page .homefix-ac-amc-section .section-title.upper .main-title h1 {
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-ac-page .homefix-ac-amc-intro {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-ac-page .homefix-ac-amc-section .feature-content h3 {
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-ac-page .homefix-ac-amc-section .feature-content p {
+    color: var(--homefix-muted) !important;
+}
+
+/* Landing page About tabs (SERVICES / AMC / SUPPORT) - fix contrast on light theme */
+body .about-area.one .appoinment-tab .tabs li a {
+    color: var(--homefix-muted) !important;
+}
+
+body .about-area.one .appoinment-tab .tabs li.boder a,
+body .about-area.one .appoinment-tab .tabs li a:hover,
+body .about-area.one .appoinment-tab .tabs li a:focus,
+body .about-area.one .appoinment-tab .tabs li a:focus-visible {
+    color: var(--homefix-text) !important;
+}
+
+body .about-area.one .appoinment-tab .tabs li.boder a::before,
+body .about-area.one .appoinment-tab .tabs li a::after {
+    background: rgba(16, 16, 16, 0.35) !important;
+    opacity: 1 !important;
+}
+
+/* Landing page tab progress bar (barfiller) - fix visibility on light theme */
+body .about-area.one .prossess-ber-plugin span {
+    color: var(--homefix-text) !important;
+}
+
+body .about-area.one .barfiller {
+    background-color: rgba(16, 16, 16, 0.12) !important;
+}
+
+body .about-area.one .barfiller .fill,
+body .about-area.one span.fill {
+    background: var(--homefix-accent) !important;
+}
+
+/* AMC page - 3 plan cards (Essential/Executive/Elite) switch to light card style */
+body.homefix-amc-page .homefix-amc-plans .homefix-amc-plans-intro {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border) !important;
+    box-shadow: var(--homefix-shadow) !important;
+    padding: 0 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan::before {
+    display: none !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan:hover {
+    transform: none !important;
+    border-color: var(--homefix-border) !important;
+    box-shadow: var(--homefix-shadow) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan:hover::before {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+/* Kill template hover overlays/effects on pricing cards */
+body.homefix-amc-page .pricing-area .single-pricing-box:hover::before,
+body.homefix-amc-page .pricing-area .single-pricing-box:hover::after,
+body.homefix-amc-page .pricing-area .single-pricing-box:hover .pricing-inner-box::before,
+body.homefix-amc-page .pricing-area .single-pricing-box:hover .pricing-inner-box::after,
+body.homefix-amc-page .pricing-area .single-pricing-box:hover .single-pricing-content::before,
+body.homefix-amc-page .pricing-area .single-pricing-box:hover .pricing-button::before {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan.popular,
+body.homefix-amc-page .homefix-amc-plan.popular:hover {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border) !important;
+    box-shadow: var(--homefix-shadow) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan.popular::before,
+body.homefix-amc-page .homefix-amc-plan.popular:hover::before {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-inner-box {
+    background: transparent !important;
+    border-radius: 22px;
+    padding: 40px 34px 34px;
+    backdrop-filter: none !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .single-pricing-content h3 {
+    color: var(--homefix-text) !important;
+    letter-spacing: 0.12em;
+}
+
+body.homefix-amc-page .homefix-amc-plan .single-pricing-content p {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-dolar h3 {
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-dolar h3 span {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-plan-list ul,
+body.homefix-amc-page .homefix-amc-plan .pricing-plan-list ul li {
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-plan-list ul li::before {
+    color: var(--homefix-accent) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-badge {
+    background: rgba(216, 171, 122, 0.18) !important;
+    color: #7a4d1f !important;
+    border: 1px solid rgba(216, 171, 122, 0.35) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-button a {
+    background: var(--homefix-accent) !important;
+    color: #101010 !important;
+    border: 1px solid transparent !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .pricing-button a:hover {
+    background: #cfa06d !important;
+    color: #101010 !important;
+}
+
+@media (max-width: 575px) {
+    body.homefix-amc-page .homefix-amc-plan .pricing-inner-box {
+        padding: 32px 22px 26px;
+    }
+}
+
+/* AMC page - Additional features (details/summary) readability on light cards */
+body.homefix-amc-page .homefix-amc-plan details {
+    border-top-color: rgba(16, 16, 16, 0.12) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan summary {
+    color: var(--homefix-text) !important;
+    background: #ffffff !important;
+    border: 1px solid var(--homefix-border) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan summary:hover {
+    background: rgba(216, 171, 122, 0.18) !important;
+    border-color: rgba(216, 171, 122, 0.45) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan details[open] summary {
+    color: #101010 !important;
+    background: var(--homefix-accent) !important;
+    border-color: transparent !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .plan-extra-list {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-amc-page .homefix-amc-plan .plan-extra-list li::marker {
+    color: var(--homefix-accent) !important;
+}
+
+/* Contact page - convert dark helpdesk/form section to light theme */
+body.homefix-contact-page .homefix-contact-form-section {
+    background: var(--homefix-bg) !important;
+}
+
+body.homefix-contact-page .homefix-contact-card,
+body.homefix-contact-page .homefix-contact-form {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border) !important;
+    color: var(--homefix-text) !important;
+    box-shadow: var(--homefix-shadow) !important;
+}
+
+body.homefix-contact-page .homefix-contact-card h2,
+body.homefix-contact-page .homefix-contact-form h3 {
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-contact-page .homefix-contact-card ul,
+body.homefix-contact-page .homefix-contact-card p,
+body.homefix-contact-page .homefix-contact-form .form-label,
+body.homefix-contact-page .homefix-contact-form .form-check-label {
+    color: var(--homefix-muted) !important;
+}
+
+body.homefix-contact-page .homefix-contact-form .form-control,
+body.homefix-contact-page .homefix-contact-form .form-select,
+body.homefix-contact-page .homefix-contact-form textarea {
+    background: #ffffff !important;
+    border: 1px solid var(--homefix-border) !important;
+    color: var(--homefix-text) !important;
+}
+
+body.homefix-contact-page .homefix-contact-form .form-control::placeholder,
+body.homefix-contact-page .homefix-contact-form textarea::placeholder {
+    color: rgba(16, 16, 16, 0.45) !important;
+}
+
+body.homefix-contact-page .homefix-contact-form .form-control:focus,
+body.homefix-contact-page .homefix-contact-form .form-select:focus {
+    border-color: rgba(216, 171, 122, 0.65) !important;
+    outline: none;
+}
+
+body.homefix-contact-page .homefix-contact-form .form-check-input {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(16, 16, 16, 0.25) !important;
+}
+
+/* Remove dark strip under footer (copyright-area) in light theme */
+.copyright-area,
+.copyright-area.upper {
+    background: var(--homefix-bg) !important;
+    border-top: 1px solid var(--homefix-border) !important;
+}
+
+.copyright-area .copyright-content p {
+    color: var(--homefix-muted) !important;
+}
+
+/* Testimonials (index home) */
+.testimonial-area.one {
+    background: var(--homefix-bg) !important;
+}
+
+.testimonial-area.one .section-title {
+    text-align: center !important;
+}
+
+.testimonial-area.one .testimonial-content {
+    background: transparent !important;
+    border: 1px solid var(--homefix-border) !important;
+    border-radius: 16px;
+    box-shadow: var(--homefix-shadow);
+}
+
+.testimonial-area.one .test-box {
+    background: var(--homefix-surface) !important;
+    border-radius: 14px;
+}
+
+.testimonial-area.one .testimonial-description p {
+    color: var(--homefix-muted) !important;
+}
+
+.testimonial-area.one .testimonial-title h3 {
+    color: var(--homefix-text) !important;
+}
+
+.testimonial-area.one .testimonial-title span {
+    color: #7a4d1f !important;
+}
+
+.testimonial-area.one .testimonial-icon {
+    opacity: 0.55;
+    filter: grayscale(1);
+}
+
+/* Testimonials dots */
+.testimonial-area.one .owl-dots {
+    position: static !important;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.testimonial-area.one .owl-dot {
+    background: rgba(16, 16, 16, 0.18) !important;
+    border-radius: 999px;
+}
+
+.testimonial-area.one .owl-dot.active {
+    background: var(--homefix-accent) !important;
+}
+
+@media (max-width: 991px) {
+    .testimonial-area.one {
+        padding: 72px 0 96px !important;
+    }
+
+    .testimonial-area.one .testimonial-icon {
+        right: 28px !important;
+        bottom: 28px !important;
+    }
+
+    .testimonial-area.one .testimonial-description p {
+        margin-bottom: 70px !important;
+    }
+}
+
+/* Counter stats strip (120+ / 70 / 105K / 50+) */
+body .counter-area.one {
+    background: var(--homefix-bg) !important;
+}
+
+body .counter-area.one .row.bg-col {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border);
+    border-radius: 16px;
+}
+
+body .counter-area.one .counter-text h1 {
+    color: var(--homefix-text) !important;
+}
+
+body .counter-area.one .counter-title h4 {
+    color: var(--homefix-muted) !important;
+}
+
+body .counter-area.one .counter-text h1::before {
+    background: var(--homefix-surface) !important;
+}
+
+body .counter-area.one .counter-text h4::before {
+    background: rgba(16, 16, 16, 0.25) !important;
+}
+
+body .counter-area.one .counter-single-item-inner {
+    background: transparent !important;
+}
+
+body .counter-area.one .counter-single-item-inner::before,
+body .counter-area.one .counter-single-item-inner::after {
+    background-image: linear-gradient(to top, rgba(16, 16, 16, 0.08), rgba(216, 171, 122, 0.55)) !important;
+}
+
+/* Service content cards (AC pages + home services slider cards) */
+.feature-service-card .feature-content h4,
+.feature-service-card .feature-content h3,
+.feature-service-card .feature-content p {
+    color: var(--homefix-text) !important;
+}
+
+/* Home page service carousel cards (feature-area.one) were designed for dark mode */
+.feature-area.one {
+    background: var(--homefix-bg) !important;
+}
+
+.feature-area.one .feature-service-card,
+.feature-area.one .single-feature-box {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border);
+    border-radius: 16px;
+    box-shadow: var(--homefix-shadow);
+    padding: 0 24px !important;
+}
+
+.feature-area.one .feature-content {
+    background: transparent !important;
+}
+
+.feature-area.one .feature-content h4 {
+    background: rgba(216, 171, 122, 0.16) !important;
+    color: #8a5f2b !important;
+}
+
+.feature-area.one .feature-content h4::after {
+    background: transparent !important;
+}
+
+.feature-area.one .feature-content h4::before {
+    background: var(--homefix-accent) !important;
+}
+
+.feature-area.one .feature-content h3 {
+    color: var(--homefix-text) !important;
+}
+
+.feature-area.one .feature-content p {
+    color: var(--homefix-muted) !important;
+}
+
+/* Make the "View Details" line/dot readable on light surfaces */
+/* Replace the old line/dot CTA with a real button */
+.feature-area.one .feature-button {
+    margin-top: 18px;
+    overflow: visible !important;
+}
+
+.feature-area.one .feature-button::before,
+.feature-area.one .feature-button a::before,
+.feature-area.one .feature-button a::after {
+    content: none !important;
+    display: none !important;
+}
+
+.feature-area.one .feature-button a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--homefix-border);
+    background: #ffffff !important;
+    color: var(--homefix-text) !important;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-left: 0 !important;
+    line-height: 1.1 !important;
+    box-shadow: 0 6px 18px rgba(16, 16, 16, 0.08);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.feature-area.one .feature-button a:hover,
+.feature-area.one .feature-button a:focus,
+.feature-area.one .feature-button a:focus-visible {
+    background: rgba(216, 171, 122, 0.18) !important;
+    border-color: rgba(216, 171, 122, 0.55) !important;
+    color: #7a4d1f !important;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.feature-area.one .single-feature-box:hover .feature-content h3 {
+    color: var(--homefix-accent) !important;
+}
+
+/* Some layouts set CTA text transparent; restore readability */
+.homefix-ac-page .feature-service-card .feature-button a {
+    color: #101010 !important;
+    text-shadow: none !important;
+}
+
+/* FAQ accordion (used on service pages inside `.blog-area one`) */
+.faq-accordion,
+.blog-area.one .faq-accordion {
+    border-top-color: rgba(16, 16, 16, 0.12) !important;
+}
+
+.blog-area.one .faq-accordion li {
+    border-bottom-color: rgba(16, 16, 16, 0.12) !important;
+}
+
+.blog-area.one .faq-accordion li a {
+    color: var(--homefix-text) !important;
+}
+
+.blog-area.one .faq-accordion li p {
+    color: var(--homefix-muted) !important;
+}
+
+/* Speak to Our Team strip (was dark) */
+.homefix-ac-page .homefix-ac-speak {
+    background: var(--homefix-surface) !important;
+    color: var(--homefix-text) !important;
+    border-top: 1px solid var(--homefix-border);
+    border-bottom: 1px solid var(--homefix-border);
+}
+
+.homefix-ac-page .homefix-ac-speak h3,
+.homefix-ac-page .homefix-ac-speak .speak-points {
+    color: var(--homefix-text) !important;
+}
+
+/* Footer social buttons + subscribe inputs/buttons */
+.footer-section .footer-icon-list ul li a,
+.footer-section.upper .footer-icon-list ul li a {
+    background: var(--homefix-surface) !important;
+    border: 1px solid var(--homefix-border);
+    color: var(--homefix-text) !important;
+}
+
+.footer-section .footer-icon-list ul li a:hover,
+.footer-section.upper .footer-icon-list ul li a:hover {
+    background: var(--homefix-accent) !important;
+    border-color: transparent !important;
+    color: #101010 !important;
+}
+
+.footer-section .form_box input {
+    background: #ffffff !important;
+    border: 1px solid var(--homefix-border) !important;
+    color: var(--homefix-text) !important;
+}
+
+.footer-section .form_box input::placeholder {
+    color: rgba(16, 16, 16, 0.45) !important;
+}
+
+button.btns,
+.footer-section.upper button.btns {
+    background: var(--homefix-accent) !important;
+    border-color: transparent !important;
+    color: #101010 !important;
+}
+
+button.btns:hover,
+.footer-section.upper button.btns:hover {
+    background: #cfa06d !important;
+    border-color: transparent !important;
+    color: #101010 !important;
+}
+
+/* Cards / boxes */
+.single-feature-box,
+.single-project-box,
+.homefix-amc-plan,
+.benefit-block,
+.homefix-ac-hero-panel,
+.homefix-ac-services-aside {
+    background: var(--homefix-surface);
+    border: 1px solid var(--homefix-border);
+    box-shadow: none;
+}
+
+/* Accent buttons */
+.dtbtn,
+.feature-button a,
+.pricing-button a {
+    background: var(--homefix-accent);
+    color: #101010 !important;
+    border-color: transparent;
+}
+
+.dtbtn:hover,
+.feature-button a:hover,
+.pricing-button a:hover {
+    background: #cfa06d;
+    color: #101010 !important;
+}
+
+/* Muted text helpers used around the site */
+.trust-line,
+.muted-note,
+.faq-intro {
+    color: var(--homefix-muted) !important;
+}
+
+/* Make previously-white-on-dark blocks readable */
+.homefix-contact-locations h3,
+.homefix-contact-locations ul,
+.homefix-ac-services-note,
+.homefix-ac-services-lead,
+.homefix-ac-services-list li {
+    color: var(--homefix-text);
+}
+
+/* Hide Home Cleaning service links (not offered) */
+a[href="home-cleaning.html"],
+a[href$="/home-cleaning.html"],
+a[href$="home-cleaning.html"] {
+    display: none !important;
 }
