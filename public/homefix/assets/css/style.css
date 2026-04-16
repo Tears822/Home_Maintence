@@ -306,10 +306,40 @@ Tags:       architect, architecture, architecture design, architecture portfolio
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #ffffff;
+    color: var(--homefix-text, #1a1a1a);
     font-size: 28px;
     font-weight: 700;
     line-height: 1;
+}
+
+/* Long text wordmark in fixed-width header column */
+.hendre_nav_manu .logo .homefix-logo {
+    font-size: clamp(12px, 0.9vw + 0.55rem, 17px);
+    line-height: 1.2;
+    gap: 0;
+}
+
+.homefix-wordmark {
+    letter-spacing: 0.02em;
+}
+
+.footer-section .elaction-logo .homefix-footer-wordmark {
+    display: inline-block;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 700;
+    color: var(--homefix-text, #1a1a1a);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+.footer-section .elaction-logo .homefix-footer-wordmark:hover {
+    color: var(--homefix-accent, #d8ab7a);
+}
+
+.sidebar-info-contents .nav-logo .homefix-logo.sidebar-homefix-logo {
+    font-size: clamp(16px, 2.2vw, 22px);
+    line-height: 1.25;
+    gap: 0;
 }
 
 .homefix-logo i {
@@ -322,7 +352,7 @@ Tags:       architect, architecture, architecture design, architecture portfolio
 }
 
 .homefix-logo:hover {
-    color: #ffffff;
+    color: var(--homefix-text, #1a1a1a);
 }
 
 .sidebar-homefix-logo {
