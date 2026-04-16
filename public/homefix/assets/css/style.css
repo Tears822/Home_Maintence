@@ -14696,3 +14696,119 @@ a[href$="/home-cleaning.html"],
 a[href$="home-cleaning.html"] {
     display: none !important;
 }
+
+/* Preloader — light style (curtain + spinner match HomeFix palette) */
+.loader-wrapper {
+    background: var(--homefix-bg);
+}
+
+.loader-wrapper .loder-section {
+    background: var(--homefix-surface);
+}
+
+.loader {
+    border-color: rgba(16, 16, 16, 0.1);
+    border-top-color: var(--homefix-accent);
+}
+
+.loader::before {
+    border-color: rgba(216, 171, 122, 0.45);
+    border-left-color: rgba(16, 16, 16, 0.08);
+}
+
+.loader::after {
+    border-color: var(--homefix-accent);
+    border-right-color: rgba(16, 16, 16, 0.08);
+}
+
+/* Navbar sidebar toggle — visible + tappable in light header */
+.header-src-box .sidebar-btn {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-src-box .nav-btn.navSidebar-button {
+    right: 0;
+    top: 0;
+}
+
+.header-src-box .nav-btn.navSidebar-button,
+.header-src-box .nav-btn.navSidebar-button span {
+    cursor: pointer;
+}
+
+.header-src-box .nav-btn.navSidebar-button span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.header-src-box .nav-btn.navSidebar-button i {
+    font-size: 28px;
+    line-height: 1;
+    color: var(--homefix-text) !important;
+}
+
+/* Right info sidebar — light panel (was dark #272727 template) */
+.xs-sidebar-group.info-group .xs-sidebar-widget {
+    background: var(--homefix-bg) !important;
+    border-left: 1px solid var(--homefix-border);
+    box-shadow: -12px 0 40px rgba(16, 16, 16, 0.08);
+}
+
+.xs-sidebar-group.info-group .xs-bg-black.xs-overlay {
+    background-color: rgba(16, 16, 16, 0.45) !important;
+}
+
+.xs-sidebar-group.info-group .close-side-widget i {
+    color: var(--homefix-text) !important;
+}
+
+.xs-sidebar-group.info-group .close-side-widget:hover i,
+.xs-sidebar-group.info-group .close-side-widget:focus i {
+    color: var(--homefix-accent) !important;
+}
+
+.xs-sidebar-group.info-group .contact-info h2 {
+    color: var(--homefix-text) !important;
+}
+
+.xs-sidebar-group.info-group ul.list-style-one li {
+    color: var(--homefix-muted) !important;
+    border-bottom: 1px solid var(--homefix-border);
+    padding-top: 14px;
+}
+
+.xs-sidebar-group.info-group ul.list-style-one li:last-child {
+    border-bottom: none;
+}
+
+.xs-sidebar-group.info-group ul.list-style-one li i {
+    color: var(--homefix-accent) !important;
+}
+
+.xs-sidebar-group.info-group ul.list-style-one li a {
+    color: var(--homefix-accent-2) !important;
+}
+
+.xs-sidebar-group.info-group ul.social-box li a {
+    background: var(--homefix-surface) !important;
+    color: var(--homefix-text) !important;
+    border: 1px solid var(--homefix-border);
+}
+
+.xs-sidebar-group.info-group ul.social-box li a:hover {
+    background: var(--homefix-accent) !important;
+    color: #101010 !important;
+    border-color: transparent;
+}
+
+.xs-sidebar-group.info-group .content-thumb-box img {
+    border-radius: 8px;
+    border: 1px solid var(--homefix-border);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}

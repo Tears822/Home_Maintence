@@ -669,6 +669,7 @@
                     e.preventDefault(), o(".info-group").removeClass("isActive");
                 }),
             o("body").on("click", function (e) {
+                if (o(e.target).closest(".navSidebar-button, .offset-side-bar").length) return;
                 o(".info-group").removeClass("isActive"), o(".cart-group").removeClass("isActive");
             }),
             o(".xs-sidebar-widget").on("click", function (e) {
